@@ -1,1 +1,140 @@
-What is Cloud Computing ?
+Problems with traditional IT approach:
+--------------------------------------
+
+1. Pay for the rent of data centers
+2. Pay for power supply, cooling, maintenance
+3. Adding and replacing hardware takes time
+4. Scaling is limited
+5. Hire 24/7 team to monitor the infrastructure
+6. How to deal with disasters
+
+Cloud Computing
+----------------
+On-demand delievery of IT resources with pay-as-you-go pricing
+E.g: Gmail, Dropbox
+
+Deployment models of the Cloud:
+-------------------------------
+
+1. Private Cloud : Cloud services used by a single organization, not exposed to public
+
+2. Public Cloud : Cloud resources owned and operated by a 
+                    3rd party cloud service provider delievered over the internet
+
+3. Hybrid Cloud : Keep some services on-premises and extend some capabilities to the cloud
+
+
+5 Characteristics of Cloud Computing:
+-------------------------------------
+
+1. On demand self service : Users can provision resources and use them without the human
+intervention from the service provider
+
+2. Broad network access: Resources available all over the network and can be accessed by
+diverse client platforms
+
+3. Multi-tenancy and resource pooling: Multiple customers can share the same infrastructure
+and application
+
+4. Rapid elasticity and scalability : Automatically and quickly acquire and dispose resources
+when needed
+
+5. Measured Service : Pay for what you use
+
+
+6 Advantages of Cloud Computing:
+-------------------------------
+
+1. Trade Capital Expense (CAPEX) for Operational Expense (OPEX)
+
+2. Benefit from the massive economies of scale
+
+3. Stop guessing capacity
+
+4. Increase speed and agility
+
+5. Stop spending money running and maintaining data centers
+
+6. Go global in minutes
+
+
+Problems solved by cloud:
+--------------------------
+
+1. Flexibility
+2. Cost-effectiveness
+3. Scalability
+4. Elasticity
+5. High availability and fault tolerance
+6. Agility
+
+
+Types of cloud computing (Service models of the cloud):
+-----------------------------------------------------
+On- Premises:
+
+    You need to manage : 
+        Infrastructure, Data, Runtime, Middleware, O/S, Virtualization, Servers, Storage, Networking 
+
+
+1. Infrasctructure as a serice (IaaS):
+
+    You need to manage : 
+        Infrastructure, Data, Runtime, Middleware, O/S
+
+    AWS manages : 
+        Virtualization, Servers, Storage, Networking
+
+2. Platform as a service (PaaS)
+
+    You need to manage:
+        Applications, Data
+
+    AWS Manages : 
+        Runtime, Middleware, O/S, Virtualization, Servers, Storage, Networking
+
+3. Software as a service (SaaS)
+
+    You don't need to manage anything
+    Everything is managed by AWS
+
+
+Pricing of the cloud :
+----------------------
+
+1. Compute : Pay for compute time
+2. Storage : Pay for data stored in the cloud
+3. Data transfer out of the cloud : Data transfer IN is free
+
+
+AWS Global Infrastructure :
+--------------------------
+
+1. AWS regions : Geographical area 
+2. AWS availability zones : Isolated part of AWS regions having discrete data centers
+3. AWS Data centers : Physical location where the data resides
+4. AWS Edge Locations / Points of Presence : Content is delievered to end users with low latency
+
+How to choose AWS region?
+-------------------------
+
+1. Compliance : Data governance and legal requirements
+2. Proximity to customers : Reduced latency
+3. Avaiable services within a region
+4. Pricing 
+
+
+Shared Responsibility Model:
+--------------------------
+
+Customer : Responsibility for the security IN the Cloud
+AWS : Responsibility for the security OF the cloud 
+
+
+AWS Acceptable Use Policy:
+------------------------
+
+1. No illegal, harmful or offensive use of Content
+2. No security violations 
+3. No network abuse 
+4. No email or other message abuse 
