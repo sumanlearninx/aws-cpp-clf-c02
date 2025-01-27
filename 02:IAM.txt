@@ -1,0 +1,111 @@
+IAM : Identity and Access Management 
+-----------------------------------
+
+- Global Service
+- Root account created by default, should not be used 
+
+IAM : Users and Groups
+------------------
+
+- Users are people within your organization and also can be grouped
+- Groups only contains users, not other Groups
+- Users don't have to belong to a group and a user can belong to multiple Groups
+
+IAM : Permissions 
+----------------
+
+- Users or groups can be assigned JSON documents called policies 
+- Policies define the permissions of the users 
+- In AWs, you apply the Least Privilege Principle. 
+- Don't give more permissions than a user needs
+
+IAM : Policies
+-------------
+
+- Version: Policy language version, always "2012-10-17"
+- Id: Identifier of the policy 
+- Statement: One or more individual statements
+    - sid: identifier of the statement
+    - effect: whether the statement allows or denies access 
+    - principal: account/user/role to which the policy is applied to 
+    - action: list of actions, policy allows or denies 
+    - resource: list of resources to which the action is applied to
+    - condition: conditions for when this policy is in effect (optional) 
+
+IAM : Password Policy
+--------------------
+
+- Strong Passwords : 
+        Set minimum password length
+        Require specific character types 
+        Allow all IAM users to change their password 
+        Require users to change password after certain time 
+        Prevent password reuse 
+
+IAM : MFA (Multi Factor Authentication)
+----------------------------------
+
+- Protect root account and IAM users
+- IAM = Paaword you know + Security Device you own 
+
+MFA Devices:
+    1. Virtual MFA Device : Google Authenticator, Authy 
+    2. Universal 2nd Factor (U2F) security key : E.g: Yubikey by Yubico (3rd party). Like a pendrive 
+    3. Hardware Key Fob MFA Device 
+    4. Hardware Key Fob MFA Device for AWS Gov Xloud (US)
+
+AWS Access Keys
+---------------
+
+To access AWS, you have 3 options:
+
+1. AWS Management Console (protected by password + MFA)
+
+2. AWS Command Line Interface (CLI) : protected by access Keys
+
+3. AWS Software Development Kit (SDK) : set of libraries. protected by access keys 
+
+- Users manage their own access keys 
+
+- Access Keys : Access Key ID (username) , Secret Access Key (password)
+
+AWS CLI
+-------
+
+Tool that enables you to interact with AWS services using commands in your command line shell 
+
+AWS SDK
+------
+
+- Language specific APIs (set of libraries)
+- Access and manage AWS services programatically 
+- Emebedded within your application 
+
+AWS Cloudshell
+----------
+
+- Terminal in the cloud of AWS
+- Not available in all the AWS regions 
+
+IAM Roles
+-------
+
+- Assign permissions to AWS services 
+- Common roles : Ec2 Instance Roles, Lambda Function Roles, Roles for CloudFormation
+
+IAM Security Tools
+---------------
+
+1. IAM Credentials Report (account-level) : Report that lists all your account's users and the 
+status of their various credentials 
+
+2. IAM Access Advisor (user-level) : Shows the service permissions granted to a user
+and when those services were last accesses
+
+
+Shared Responsibility Model
+-------------------------
+
+AWS : Infrastructure, Configuration and vulnerability analysis, Compliance Validation
+You : Users, groups and roles management. Enable MFA. Rotate all keys often. Use IAM tools. 
+        Analyze access patterns and review permissions 
