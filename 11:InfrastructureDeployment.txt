@@ -1,0 +1,106 @@
+Deployments and managing Inrastructure at scale
+
+1. CloudFormation
+----------
+
+- Declarative way of outlining your AWS infrastructure
+- CloudFormation creates the template for you in the right order, with the exact configuration that you specify
+
+Benefits of AWS CloudFormation:
+    - Infrastructure as code
+    - Cost
+    - Productivity 
+    - Don't re-invent the wheel - leverage existing templates on the web
+    - Support (almost) all AWS resources
+
+Cloud Formation + Infrastructure Composer : We can see all the resources and relations between components visuall 
+
+
+2. CDK
+-----
+
+- AWS Cloud Development Kit
+- Define your cloud infrastructure using a familiar language
+- Code is compiled into CloudFormation template 
+- You can deploy infrastructure and application runtime code together
+
+
+3. AWS Elastic Beanstalk
+-----------------
+
+- Developer centric view of deploying an application on AWS
+- Platform as a Service (PaaS)
+- Its free but pay for underlying resources
+- It is a managed service
+- Just the application code is the responsibility of the developer
+
+3 architectures models:
+    i. Single instance deployment - good for dev
+    ii. LB + ASG - great for production or pre-production web app
+    iii. ASG only - great for non-web apps in production
+
+- Health monitoring : Health agent pushes metrics to CloudWatch. Checks for app health, publishes 
+    health events
+
+
+4. AWS Code Deploy
+----------------
+
+- Deploy our application automatically
+- Works with EC2 instances
+- Works with on-premise servers
+
+
+5. Code Commit
+---------
+
+- From July 25, 2024 - discontinued by AWS
+- So, recommend to use Github, Gitlab, git 3rd party
+- It was the code repository : Version control, collaboration
+
+6. AWS Code Build
+----------
+
+- Compiles source code, run tests, and produces packages that are ready to be developed
+- Fully managed, serverless
+
+
+7. AWS Code Pipeline
+-------------
+
+- Orchestrate the different steps to have the code automatically pushed to production
+    Code > Build > Test > Provision > Deploy
+
+- Basis for CICD (Continuous Integration Continuous Delievery)
+
+
+8. AWS Code Artifact
+---------------
+
+- Store and retrieve dependencies of S/W packages
+
+
+9. AWS Systems Manager (SSM)
+--------------------
+
+- Helps you manage your EC2 and on-premises (Hybrid AWS service) systems at scale
+- Features:
+    - Patching automation for enhanced compliance
+    - Run commands across an entire fleet of servers
+
+- Run commands, patch and configure our servers
+
+
+10. SSM Session Manager
+-----------------
+
+- Start secure shell on your EC2 and on-premises services 
+- No SSH access, bastion hosts, or SSH keys needed
+- No port 22 needed (better security)
+
+11. SSM Parameter Store
+--------------
+
+- Secure storage for configuration and secrets like passwords, API Keys 
+
+

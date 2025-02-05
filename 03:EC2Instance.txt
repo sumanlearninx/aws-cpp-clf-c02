@@ -1,0 +1,77 @@
+EC2 Instance
+------------
+
+- Elastic Compute Cloud
+- Infrastructure as a Service
+
+EC2 Options
+-----------
+
+
+EC2 Instance types
+-----------------
+
+1. General Purpose: 
+    - Good balance between Compute, memory and networking
+    - Great for a diversity of workloads such as web servers or code repositories 
+
+2. Compute optimized:
+    - Great for compute intensive tasks that require high performance processors 
+    - E.g: batch processing workloads, media transcoding, high performance web servers/computing,
+            scientific modelling and ML, dedicated gaming servers 
+        
+3. Memory optimized:
+    - Fast performance for workloads that process large datasets in memory 
+    - Use cases : High performance DB, distributed web scale cache stores, in-memory db,
+                    real-time processing of big unstructured data 
+
+4. Storage Optimized:
+    - Great for storage intensive tasks that require high, sequential read and write access to 
+        large datasets on local storage 
+    - Use cases : OLTP systems, relational and NoSQL db, cache for in-memory dbs, data warehousing,
+                    distributed file systems 
+
+
+Security Groups
+-------------
+
+- Control how traffic is allowed into or out of EC2 instances 
+- Contain only ALLOW rules 
+- It is good to maintain one separate security group for SSH access 
+
+Note : 
+    - If your application is not accessible (time out), then it's a security group issue
+    - If your application gives a "connection refused" error, then it is an application error
+        it's not launched 
+
+Note :
+    - By default all inbound traffic is blocked and all outbound traffic is authorised 
+
+Classic Ports to Know 
+-------------------
+
+22 - SSH (secured shell) - log into linux instance 
+21 - FTP - upload files into file share 
+22 - SFTP - upload files using SSH 
+80 - HTTP - access unsecured websites 
+443 - HTTPS - access secured websites 
+3389 - RDP - remote desktop protocol - Log into a windows instance 
+
+
+EC2 instance connect
+----------------
+
+securely connect to EC2 instance using SSH without the need to manage access keys 
+
+
+EC2 Instance Roles
+----------------
+
+Assign permissions to EC2 service 
+
+
+EC2 Instance Purchasing Options 
+------------------------------
+
+1. On Demand Instances 
+
