@@ -1,0 +1,135 @@
+AWS Global Infrastructure
+
+
+1. Global Application
+---------------
+
+- Application deployed in multiple geographies
+- On AWS : This could be regions or edge locations
+- Decreased latency
+- Disaster Recovery
+- Attack Protection 
+
+* Regions - Geographical area
+* Availability Zones - isolated part of regions. have concrete data centers
+* Edge Locations (Points of presence) - Content delievery as close as possible to users 
+
+Global DNS : Route53
+Global Content Delievery Network (CDN) : CloudFront
+S3 Transfer Acceleration
+AWS Global Accelerator 
+
+
+2. Amazon Route53
+--------------
+
+- Managed DNS (Domain Name System)
+
+Route53 Routing Policies:
+    i. Simple Routing Poliy - No health checks 
+    ii. Weighted Routing Policy - Distribute traffic across multiple instances 
+    iii. Latency Routing Policy - Redirect users to near server 
+    iv. Failover Routing Policy - Disaster Recovery - use of failover instance if primary instance fails
+
+- Domain Registration, DNS, Health Checks, Routing Policy 
+
+
+3. AWS CloudFront
+--------------
+
+- Content Delievery Network (CDN)
+- Improves read performance, content is cached at the edge locations 
+- DDOS Protection because worldwide integration with AWS Shield, AWS Web Application Firewall
+
+CloudFront Origins:
+    i. S3 Buckets
+        - Distributing files and caching them at edge 
+        - Enhanced security with CloudFront Origin Access Control (OAC)
+    
+    ii. Custom Origin (HTTP):
+        - Application Load Balancer 
+        - EC2 instance 
+        - S3 static website
+
+CloudFront vs S3 Cross Region Replication:
+    i. CloudFront
+        - Great for static content that must be available everywhere
+        - Files are cached 
+    
+    ii. S3 Cross Region Replication:
+        - Great for dynamic content that needs to be available at low-latency in few regions 
+        - Files are updated in real time
+        - Read only 
+
+4. S3 Transfer Acceleration
+-----------------------
+
+- Increase the transfer speed by transferring file to an AWS edge location which will forward the 
+    data to S3 bucket in the target region 
+
+
+5. AWS Global Accelerator
+----------------------
+
+- Improves global application availability and performance using the AWS global networking
+- 2 Anycast IP are created for your application and traffic is sent through edge locations 
+
+AWS Global Accelerator vs AWS CloudFront:
+    i. AWS Global Accelerator 
+        - No caching
+        - Proxying packets 
+    
+    ii. CloudFront
+        - CDN 
+        - Content is cached which is served at the edge
+
+
+6. AWS Outposts
+-----------
+
+- AWS outposts are "serverracks" that offers the same AWS infrastructure, services, APIs and tools
+    to build your own-applications on-premises just as in the cloud 
+- Outposts racks will be setup by AWS within your on-premise infrastrucuture 
+
+
+7. AWS Wavelength
+------------
+
+- Wavelength zones are the infrastructure deployments embedded within the telecommunication 
+    providers datacenters at the edge of the 5G networks 
+- Ultra low latency applications 
+
+
+8. AWS Local Zones 
+--------------
+
+- Places AWS compute, storage, database and other selected AWS services closer to end users 
+- Extend your VPC to more locations - extension of an AWS region 
+
+
+9. Global Application Architecture 
+-------------------
+
+* Single Region, Single AZ 
+    - No High Availability 
+    - No Global Latency 
+    - Low Difficulty 
+
+* Single Region, Multi AZ
+    - High Availabilty 
+    - No Global Latency 
+    - Comparitively more difficulty 
+
+* Multi Region, Active-Passive 
+    - multi regions but read-write can be done in only active regions
+    - in passive region, only read can be done 
+    - Increase Global Read Latency
+    - No global Write Latency 
+    - Comparitively more difficulty
+
+* Multi Region, Active-Active
+    - Read write in both regions 
+    - Increase Read Latency 
+    _ Increase Write Latency 
+    - Most Difficulty 
+
